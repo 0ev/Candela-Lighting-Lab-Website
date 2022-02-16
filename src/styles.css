@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "huge";
+  src: url("./fonts/huge.woff")
+  }
+
+@font-face {
+  font-family: "candela";
+  src: url("./fonts/candela.otf")
+  }
+
+
+body,html,#root {
+  position: absolute;
+  top:0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  position: absolute;
+  z-index: 2;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  position: absolute;
+  top: 45vh;
+  right: 10vw;
+  width: 80vw;
+  height: 10vh;
+  word-spacing: 1em;
+  font-size: 8vh;
+  font-family: candela;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #edf106;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.text {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 25vw;
+  height: 100vh;
+  font-size: 14vh;
+  font-family: huge;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
