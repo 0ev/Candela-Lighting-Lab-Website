@@ -83,6 +83,10 @@ export default function Mainpage() {
 
   const navigate = useNavigate();
   const projectsClick = useCallback(() => navigate('/projects', {replace: true}), [navigate]);
+  const site1Click = useCallback(() => navigate('/site1', {replace: true}), [navigate]);
+  const site2Click = useCallback(() => navigate('/site2', {replace: true}), [navigate]);
+  const site3Click = useCallback(() => navigate('/site3', {replace: true}), [navigate]);
+  const site4Click = useCallback(() => navigate('/site4', {replace: true}), [navigate]);
 
 
   const d1 = useRef()
@@ -123,10 +127,10 @@ export default function Mainpage() {
           <DarkSphere realref={d5} position={[-1.55,1.33,3.1]} phi={phiArray[4]} amp={ampArray[4]} mul={mulArray[4]}/>
 
           <LightSphere realref={d6} position={[-1,1.5,4.9]} phi={phiArray[5]} amp={ampArray[5]} mul={mulArray[5]} lights={lights} site={projectsClick} changecolor="#Ffcb00"/>
-          <LightSphere realref={d7} position={[0,-1.6,0.74]} phi={phiArray[6]} amp={ampArray[6]} mul={mulArray[6]} lights={lights} site="" changecolor="#58FF00"/>
-          <LightSphere realref={d8} position={[-1.7,3.5,-2.48]} phi={phiArray[7]} amp={ampArray[7]} mul={mulArray[7]} lights={lights} site="" changecolor="#00FF76"/>
-          <LightSphere realref={d9} position={[-1.14,-3.36,-4.89]} phi={phiArray[8]} amp={ampArray[8]} mul={mulArray[8]} lights={lights} site="" changecolor="#FF1C00"/>
-          <LightSphere realref={d10} position={[4.67,3.86,-1.46]} phi={phiArray[9]} amp={ampArray[9]} mul={mulArray[9]} lights={lights} site="" changecolor="#FF009F"/>
+          <LightSphere realref={d7} position={[0,-1.6,0.74]} phi={phiArray[6]} amp={ampArray[6]} mul={mulArray[6]} lights={lights} site={site1Click} changecolor="#58FF00"/>
+          <LightSphere realref={d8} position={[-1.7,3.5,-2.48]} phi={phiArray[7]} amp={ampArray[7]} mul={mulArray[7]} lights={lights} site={site2Click} changecolor="#00FF76"/>
+          <LightSphere realref={d9} position={[-1.14,-3.36,-4.89]} phi={phiArray[8]} amp={ampArray[8]} mul={mulArray[8]} lights={lights} site={site3Click} changecolor="#FF1C00"/>
+          <LightSphere realref={d10} position={[4.67,3.86,-1.46]} phi={phiArray[9]} amp={ampArray[9]} mul={mulArray[9]} lights={lights} site={site4Click} changecolor="#FF009F"/>
         </group>
       </Canvas>
       <div className="logo" onClick={()=>(setLights(!lights))}>

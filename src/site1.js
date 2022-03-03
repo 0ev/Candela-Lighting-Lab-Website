@@ -6,7 +6,6 @@ import { useSpring, a } from '@react-spring/three'
 import {useNavigate} from 'react-router-dom';
 import { Resizer, KernelSize } from "postprocessing";
 import { OrthographicCamera } from '@react-three/drei'
-import { Gallery } from "./gallery"
 
 
 const Sphere = ({site}) => {
@@ -23,13 +22,13 @@ const Sphere = ({site}) => {
   
   return (
   <mesh ref={sphere} onClick={site} position={[0,0,0]}>
-    <a.meshStandardMaterial attach="material" color="#Ffcb00" roughness={0} metalness={0.1} />
+    <a.meshStandardMaterial attach="material" color="#58FF00" roughness={0} metalness={0.1} />
     <a.sphereBufferGeometry args={[1,32,32]}/>
   </mesh>
   )
   }
 
-export default function Projects() {
+export default function Site1() {
 
   //circumvent Link
   const navigate = useNavigate();

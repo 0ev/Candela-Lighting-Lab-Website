@@ -23,13 +23,13 @@ const Sphere = ({site}) => {
   
   return (
   <mesh ref={sphere} onClick={site} position={[0,0,0]}>
-    <a.meshStandardMaterial attach="material" color="#Ffcb00" roughness={0} metalness={0.1} />
+    <a.meshStandardMaterial attach="material" color="#00FF76" roughness={0} metalness={0.1} />
     <a.sphereBufferGeometry args={[1,32,32]}/>
   </mesh>
   )
   }
 
-export default function Projects() {
+export default function Site2() {
 
   //circumvent Link
   const navigate = useNavigate();
