@@ -1,14 +1,20 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import './fonts/huge.woff';
 import "./styles.css";
 
-import App from "./App";
+import Mainpage from "./mainpage";
+import Projects from "./projects"
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Mainpage />}/>
+      <Route path="projects" element={<Projects />}/>
+    </Routes>
+  </BrowserRouter>,
   rootElement
 );

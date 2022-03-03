@@ -1,12 +1,11 @@
+// The main page of this website
+
 import { Canvas,useFrame } from "@react-three/fiber";
-import React, { useRef,useState } from "react";
-import { OrbitControls, Box, Plane, softShadows, MeshWobbleMaterial, MeshDistortMaterial,ContactShadows } from "@react-three/drei";
+import React, { useRef,useState,useCallback } from "react";
 import { EffectComposer, SelectiveBloom } from "@react-three/postprocessing";
 import { Resizer, KernelSize } from "postprocessing";
 import { useSpring, a } from '@react-spring/three'
-import * as THREE from 'three'
-
-softShadows()
+import {useNavigate} from 'react-router-dom';
 
 const phiArray = Array.from({length: 10}, () => Math.random()*2*Math.PI)
 const ampArray = Array.from({length: 10}, () => Math.random()*0.7)
@@ -47,11 +46,11 @@ const LightSphere = ({realref,position,phi,amp,mul,lights,site,changecolor}) => 
     sphere.current.rotation.y = a*mul
     sphere.current.position.y = position[1] + Math.sin(a+phi)*amp
   })
+
   
   return (
     <group ref={sphere}>
-      <mesh ref={realref} position={position} onClick={()=>{if(!lights){window.location.href=site}}}>
-        {/* <MeshDistortMaterial castShadow receiveShadow attach="material" speed={2.1} distort={0.3} color={color} roughness={0} metalness={0.1} /> */}
+      <mesh ref={realref} position={position} onClick={!lights?site:null}>
         <a.meshStandardMaterial attach="material" color={color} roughness={0} metalness={0.1} />
         <a.sphereBufferGeometry args={[1,32,32]}/>
       </mesh>
@@ -80,7 +79,11 @@ const DarkSphere = ({realref,position,phi,amp,mul}) => {
   )
 }
 
-export default function App() {
+export default function Mainpage() {
+
+  const navigate = useNavigate();
+  const projectsClick = useCallback(() => navigate('/projects', {replace: true}), [navigate]);
+
 
   const d1 = useRef()
   const d2 = useRef()
@@ -119,7 +122,7 @@ export default function App() {
           <DarkSphere realref={d4} position={[2.51,-0.3,-1.72]} phi={phiArray[3]} amp={ampArray[3]} mul={mulArray[3]}/>
           <DarkSphere realref={d5} position={[-1.55,1.33,3.1]} phi={phiArray[4]} amp={ampArray[4]} mul={mulArray[4]}/>
 
-          <LightSphere realref={d6} position={[-1,1.5,4.9]} phi={phiArray[5]} amp={ampArray[5]} mul={mulArray[5]} lights={lights} site="" changecolor="#Ffcb00"/>
+          <LightSphere realref={d6} position={[-1,1.5,4.9]} phi={phiArray[5]} amp={ampArray[5]} mul={mulArray[5]} lights={lights} site={projectsClick} changecolor="#Ffcb00"/>
           <LightSphere realref={d7} position={[0,-1.6,0.74]} phi={phiArray[6]} amp={ampArray[6]} mul={mulArray[6]} lights={lights} site="" changecolor="#58FF00"/>
           <LightSphere realref={d8} position={[-1.7,3.5,-2.48]} phi={phiArray[7]} amp={ampArray[7]} mul={mulArray[7]} lights={lights} site="" changecolor="#00FF76"/>
           <LightSphere realref={d9} position={[-1.14,-3.36,-4.89]} phi={phiArray[8]} amp={ampArray[8]} mul={mulArray[8]} lights={lights} site="" changecolor="#FF1C00"/>

@@ -1,13 +1,19 @@
-@font-face {
+/* @font-face {
   font-family: "huge";
   src: url("./fonts/huge.woff")
-  }
+  } */
 
 @font-face {
   font-family: "candela";
   src: url("./fonts/candela.otf")
   }
 
+@font-face {
+  font-family: 'Arita-dotum-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-dotum-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body,html,#root {
   position: absolute;
@@ -21,11 +27,35 @@ body,html,#root {
 
 .main {
   position: absolute;
-  z-index: 2;
   top:0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.othermain {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+}
+
+.gallery {
+  position: absolute;
+  top:0;
+  right: 0;
+  width: 80%;
+  height: 100%;
+  padding: 5vh 5vw ;
+}
+
+.gallerytitle {
+  text-align: center;
+  color: white;
+  font-size: 10vh;
+  font-family: 'Arita-dotum-Medium';
+  font-weight: bold;
 }
 
 .logo {
@@ -50,7 +80,7 @@ body,html,#root {
           user-select: none;
 }
 
-.text {
+/* .text {
   position: absolute;
   top:0;
   left: 0;
@@ -61,4 +91,4 @@ body,html,#root {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
